@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ECAPA-TDNN to scale</title>
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Geist:wght@400;500;600&family=Geist+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Geist', system-ui, sans-serif;
+      background: #f5f5f5;
+      color: #2d3142;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 3rem 2rem;
+    }
+    .frame { max-width: 1280px; width: 100%; }
+    .diagram-container { width: 100%; overflow-x: auto; }
+    .eyebrow {
+      font-family: 'Geist Mono', ui-monospace, monospace;
+      font-size: 0.66rem;
+      font-weight: 500;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: #4f5d75;
+      margin-bottom: 0.5rem;
+    }
+    h1 {
+      font-family: 'Instrument Serif', serif;
+      font-size: clamp(1.5rem, 2.4vw + 0.75rem, 2rem);
+      font-weight: 400;
+      letter-spacing: -0.02em;
+      line-height: 1.15;
+      margin-bottom: 0.5rem;
+    }
+    .dek { color: #4f5d75; font-size: 0.9rem; margin-bottom: 1.5rem; max-width: 60rem; }
+    svg { width: 100%; min-width: 1200px; display: block; }
+    @media print {
+      .diagram-container { overflow-x: visible; }
+      svg { min-width: 0; }
+    }
+  </style>
+</head>
+<body>
+  <div class="frame">
+    <p class="eyebrow">Architecture · VoiceAttend</p>
+    <h1>Inside ECAPA-TDNN, drawn to scale</h1>
+    <p class="dek">Shapes measured from speechbrain/spkrec-ecapa-voxceleb on a 3-second clip. Each block's height grows with its channel count and its width with the number of time frames, so you can watch the data widen, then collapse into one 192-number voiceprint.</p>
+    <div class="diagram-container">
+      <svg viewBox="0 0 1200 744" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="ecapa-tdnn-flow-title ecapa-tdnn-flow-desc">
+        <title id="ecapa-tdnn-flow-title">Inside ECAPA-TDNN, drawn to scale</title>
+        <desc id="ecapa-tdnn-flow-desc">ECAPA-TDNN layers sized by tensor shape: 80-band filterbank features widen to 1024 channels through a convolution and three SE-Res2Net blocks, all three block outputs are concatenated to 3072 channels, attentive pooling removes the time axis to give 6144 values, a linear layer compresses them to the stored 192-number embedding, and a 7,205-speaker AAM head is used only in training; a bar row shows each layer's weight count, 20.8 million in total.</desc>
+        <defs>
+          <pattern id="dots" width="22" height="22" patternUnits="userSpaceOnUse">
+            <circle cx="1" cy="1" r="0.9" fill="rgba(45,49,66,0.10)"/>
+          </pattern>
+          <marker id="arrow" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><polygon points="0 0, 8 3, 0 6" fill="#4f5d75"/></marker>
+          <marker id="arrow-accent" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><polygon points="0 0, 8 3, 0 6" fill="#bf4520"/></marker>
+        </defs>
+        <rect width="100%" height="100%" fill="#f5f5f5"/>
+        <rect width="100%" height="100%" fill="url(#dots)" opacity="0.55"/>
+        <rect x="152" y="64" width="724" height="420" rx="8" fill="rgba(45,49,66,0.02)" stroke="rgba(45,49,66,0.10)" stroke-width="0.8"/>
+        <rect x="164" y="68" width="268" height="12" rx="2" fill="#f5f5f5"/>
+        <text x="298" y="77" fill="#5a6580" font-size="7" font-family="'Geist Mono', monospace" text-anchor="middle" letter-spacing="0.14em">FRAME-LEVEL · WIDTH = TIME (301 FRAMES IN A 3 s CLIP)</text>
+        <rect x="896" y="64" width="284" height="420" rx="8" fill="rgba(45,49,66,0.02)" stroke="rgba(45,49,66,0.10)" stroke-width="0.8"/>
+        <rect x="960" y="68" width="196" height="12" rx="2" fill="#f5f5f5"/>
+        <text x="1058" y="77" fill="#5a6580" font-size="7" font-family="'Geist Mono', monospace" text-anchor="middle" letter-spacing="0.14em">UTTERANCE-LEVEL · ONE VECTOR PER CLIP</text>
+        <line x1="40" y1="272" x2="128" y2="272" stroke="rgba(45,49,66,0.15)" stroke-width="0.8"/>
+        <polyline points="40,272.0 41,267.0 42,266.3 43,269.8 44,273.8 45,274.8 46,273.1 47,272.0 48,273.7 49,275.9 50,274.4 51,268.5 52,263.0 53,264.2 54,272.4 55,280.6 56,281.7 57,275.4 58,268.9 59,267.9 60,271.0 61,271.9 62,268.6 63,265.6 64,268.7 65,276.9 66,282.6 67,280.1 68,271.3 69,264.1 70,264.2 71,269.6 72,274.3 73,274.5 74,272.2 75,272.2 76,275.7 77,278.6 78,275.3 79,266.0 80,258.6 81,261.3 82,273.6 83,284.9 84,285.2 85,275.9 86,267.6 87,268.1 88,272.7 89,271.3 90,262.4 91,257.1 92,265.8 93,284.0 94,295.2 95,288.0 96,269.1 97,255.9 98,258.0 99,268.8 100,275.5 101,273.9 102,270.6 103,272.8 104,278.9 105,281.0 106,275.0 107,265.8 108,261.5 109,265.5 110,273.4 111,278.2 112,277.0 113,273.0 114,270.9 115,271.8 116,272.9 117,271.5 118,268.2 119,267.1 120,270.4 121,276.0 122,278.8 123,276.2 124,270.8 125,267.5 126,268.4 127,271.4 128,272.7" fill="none" stroke="#5a6580" stroke-width="1.2" stroke-linejoin="round"/>
+        <text x="84" y="452" fill="#2d3142" font-size="12" font-family="'Geist', sans-serif" text-anchor="middle" font-weight="600">Audio</text>
+        <text x="84" y="468" fill="#4f5d75" font-size="9" font-family="'Geist Mono', monospace" text-anchor="middle">48,000 samples</text>
+        <line x1="132" y1="272" x2="168" y2="272" stroke="#4f5d75" stroke-width="1.2" marker-end="url(#arrow)"/>
+        <line x1="252" y1="272" x2="288" y2="272" stroke="#4f5d75" stroke-width="1.2" marker-end="url(#arrow)"/>
+        <line x1="372" y1="272" x2="408" y2="272" stroke="#4f5d75" stroke-width="1.2" marker-end="url(#arrow)"/>
+        <line x1="492" y1="272" x2="528" y2="272" stroke="#4f5d75" stroke-width="1.2" marker-end="url(#arrow)"/>
+        <line x1="612" y1="272" x2="648" y2="272" stroke="#4f5d75" stroke-width="1.2" marker-end="url(#arrow)"/>
+        <line x1="732" y1="272" x2="776" y2="272" stroke="#4f5d75" stroke-width="1.2" marker-end="url(#arrow)"/>
+        <line x1="860" y1="272" x2="924" y2="272" stroke="#4f5d75" stroke-width="1.2" marker-end="url(#arrow)"/>
+        <line x1="948" y1="272" x2="1012" y2="272" stroke="#bf4520" stroke-width="1.4" marker-end="url(#arrow-accent)"/>
+        <line x1="1036" y1="272" x2="1100" y2="272" stroke="#4f5d75" stroke-width="1" stroke-dasharray="4,3" marker-end="url(#arrow)"/>
+        <path d="M 450,208 V 136 Q 450,128 458,128 H 832 Q 840,128 840,136 V 166" fill="none" stroke="#4f5d75" stroke-width="1.2" marker-end="url(#arrow)"/>
+        <path d="M 570,208 V 148 Q 570,140 578,140 H 808 Q 816,140 816,148 V 166" fill="none" stroke="#4f5d75" stroke-width="1.2" marker-end="url(#arrow)"/>
+        <rect x="600" y="106" width="124" height="12" rx="2" fill="#f5f5f5"/>
+        <text x="662" y="115" fill="#4f5d75" font-size="8" font-family="'Geist Mono', monospace" text-anchor="middle" letter-spacing="0.08em">ALL 3 BLOCK OUTPUTS</text>
+        <polygon points="168,256 180,244 252,244 252,276 240,288 168,288" fill="#f5f5f5"/>
+        <rect x="168" y="256" width="72" height="32" fill="rgba(79,93,117,0.10)" stroke="#5a6580" stroke-width="1"/>
+        <polygon points="168,256 180,244 252,244 240,256" fill="rgba(79,93,117,0.18)" stroke="#5a6580" stroke-width="1" stroke-linejoin="round"/>
+        <polygon points="240,256 252,244 252,276 240,288" fill="rgba(79,93,117,0.26)" stroke="#5a6580" stroke-width="1" stroke-linejoin="round"/>
+        <text x="210" y="452" fill="#2d3142" font-size="12" font-family="'Geist', sans-serif" text-anchor="middle" font-weight="600">Fbank</text>
+        <text x="210" y="468" fill="#4f5d75" font-size="9" font-family="'Geist Mono', monospace" text-anchor="middle">80 × 301</text>
+        <polygon points="288,214 300,202 372,202 372,318 360,330 288,330" fill="#f5f5f5"/>
+        <rect x="288" y="214" width="72" height="116" fill="#ffffff" stroke="#2d3142" stroke-width="1"/>
+        <polygon points="288,214 300,202 372,202 360,214" fill="rgba(45,49,66,0.06)" stroke="#2d3142" stroke-width="1" stroke-linejoin="round"/>
+        <polygon points="360,214 372,202 372,318 360,330" fill="rgba(45,49,66,0.13)" stroke="#2d3142" stroke-width="1" stroke-linejoin="round"/>
+        <text x="324" y="275" fill="#4f5d75" font-size="9" font-family="'Geist Mono', monospace" text-anchor="middle">k=5</text>
+        <text x="330" y="452" fill="#2d3142" font-size="12" font-family="'Geist', sans-serif" text-anchor="middle" font-weight="600">Conv1D</text>
+        <text x="330" y="468" fill="#4f5d75" font-size="9" font-family="'Geist Mono', monospace" text-anchor="middle">1024 × 301</text>
+        <polygon points="408,214 420,202 492,202 492,318 480,330 408,330" fill="#f5f5f5"/>
+        <rect x="408" y="214" width="72" height="116" fill="#ffffff" stroke="#2d3142" stroke-width="1"/>
+        <polygon points="408,214 420,202 492,202 480,214" fill="rgba(45,49,66,0.06)" stroke="#2d3142" stroke-width="1" stroke-linejoin="round"/>
+        <polygon points="480,214 492,202 492,318 480,330" fill="rgba(45,49,66,0.13)" stroke="#2d3142" stroke-width="1" stroke-linejoin="round"/>
+        <text x="444" y="275" fill="#4f5d75" font-size="9" font-family="'Geist Mono', monospace" text-anchor="middle">dil 2</text>
+        <text x="450" y="452" fill="#2d3142" font-size="12" font-family="'Geist', sans-serif" text-anchor="middle" font-weight="600">SE-Res2Net 1</text>
+        <text x="450" y="468" fill="#4f5d75" font-size="9" font-family="'Geist Mono', monospace" text-anchor="middle">1024 × 301</text>
+        <polygon points="528,214 540,202 612,202 612,318 600,330 528,330" fill="#f5f5f5"/>
+        <rect x="528" y="214" width="72" height="116" fill="#ffffff" stroke="#2d3142" stroke-width="1"/>
+        <polygon points="528,214 540,202 612,202 600,214" fill="rgba(45,49,66,0.06)" stroke="#2d3142" stroke-width="1" stroke-linejoin="round"/>
+        <polygon points="600,214 612,202 612,318 600,330" fill="rgba(45,49,66,0.13)" stroke="#2d3142" stroke-width="1" stroke-linejoin="round"/>
+        <text x="564" y="275" fill="#4f5d75" font-size="9" font-family="'Geist Mono', monospace" text-anchor="middle">dil 3</text>
+        <text x="570" y="452" fill="#2d3142" font-size="12" font-family="'Geist', sans-serif" text-anchor="middle" font-weight="600">SE-Res2Net 2</text>
+        <text x="570" y="468" fill="#4f5d75" font-size="9" font-family="'Geist Mono', monospace" text-anchor="middle">1024 × 301</text>
+        <polygon points="648,214 660,202 732,202 732,318 720,330 648,330" fill="#f5f5f5"/>
+        <rect x="648" y="214" width="72" height="116" fill="#ffffff" stroke="#2d3142" stroke-width="1"/>
+        <polygon points="648,214 660,202 732,202 720,214" fill="rgba(45,49,66,0.06)" stroke="#2d3142" stroke-width="1" stroke-linejoin="round"/>
+        <polygon points="720,214 732,202 732,318 720,330" fill="rgba(45,49,66,0.13)" stroke="#2d3142" stroke-width="1" stroke-linejoin="round"/>
+        <text x="684" y="275" fill="#4f5d75" font-size="9" font-family="'Geist Mono', monospace" text-anchor="middle">dil 4</text>
+        <text x="690" y="452" fill="#2d3142" font-size="12" font-family="'Geist', sans-serif" text-anchor="middle" font-weight="600">SE-Res2Net 3</text>
+        <text x="690" y="468" fill="#4f5d75" font-size="9" font-family="'Geist Mono', monospace" text-anchor="middle">1024 × 301</text>
+        <polygon points="776,172 788,160 860,160 860,360 848,372 776,372" fill="#f5f5f5"/>
+        <rect x="776" y="172" width="72" height="200" fill="#ffffff" stroke="#2d3142" stroke-width="1"/>
+        <polygon points="776,172 788,160 860,160 848,172" fill="rgba(45,49,66,0.06)" stroke="#2d3142" stroke-width="1" stroke-linejoin="round"/>
+        <polygon points="848,172 860,160 860,360 848,372" fill="rgba(45,49,66,0.13)" stroke="#2d3142" stroke-width="1" stroke-linejoin="round"/>
+        <text x="812" y="275" fill="#4f5d75" font-size="9" font-family="'Geist Mono', monospace" text-anchor="middle">3 × 1024</text>
+        <text x="818" y="452" fill="#2d3142" font-size="12" font-family="'Geist', sans-serif" text-anchor="middle" font-weight="600">MFA concat</text>
+        <text x="818" y="468" fill="#4f5d75" font-size="9" font-family="'Geist Mono', monospace" text-anchor="middle">3072 × 301</text>
+        <polygon points="924,130 936,118 948,118 948,402 936,414 924,414" fill="#f5f5f5"/>
+        <rect x="924" y="130" width="12" height="284" fill="rgba(191,69,32,0.08)" stroke="#bf4520" stroke-width="1"/>
+        <polygon points="924,130 936,118 948,118 936,130" fill="rgba(191,69,32,0.16)" stroke="#bf4520" stroke-width="1" stroke-linejoin="round"/>
+        <polygon points="936,130 948,118 948,402 936,414" fill="rgba(191,69,32,0.26)" stroke="#bf4520" stroke-width="1" stroke-linejoin="round"/>
+        <text x="936" y="452" fill="#2d3142" font-size="12" font-family="'Geist', sans-serif" text-anchor="middle" font-weight="600">Attn pool</text>
+        <text x="936" y="468" fill="#bf4520" font-size="9" font-family="'Geist Mono', monospace" text-anchor="middle">6144</text>
+        <polygon points="1012,248 1024,236 1036,236 1036,284 1024,296 1012,296" fill="#f5f5f5"/>
+        <rect x="1012" y="248" width="12" height="48" fill="rgba(191,69,32,0.08)" stroke="#bf4520" stroke-width="1"/>
+        <polygon points="1012,248 1024,236 1036,236 1024,248" fill="rgba(191,69,32,0.16)" stroke="#bf4520" stroke-width="1" stroke-linejoin="round"/>
+        <polygon points="1024,248 1036,236 1036,284 1024,296" fill="rgba(191,69,32,0.26)" stroke="#bf4520" stroke-width="1" stroke-linejoin="round"/>
+        <text x="1024" y="452" fill="#2d3142" font-size="12" font-family="'Geist', sans-serif" text-anchor="middle" font-weight="600">Embedding</text>
+        <text x="1024" y="468" fill="#bf4520" font-size="9" font-family="'Geist Mono', monospace" text-anchor="middle">192 · stored</text>
+        <polygon points="1100,120 1112,108 1124,108 1124,412 1112,424 1100,424" fill="#f5f5f5"/>
+        <rect x="1100" y="120" width="12" height="304" fill="rgba(45,49,66,0.02)" stroke="rgba(45,49,66,0.40)" stroke-width="1" stroke-dasharray="4,3"/>
+        <polygon points="1100,120 1112,108 1124,108 1112,120" fill="rgba(45,49,66,0.04)" stroke="rgba(45,49,66,0.40)" stroke-width="1" stroke-linejoin="round" stroke-dasharray="4,3"/>
+        <polygon points="1112,120 1124,108 1124,412 1112,424" fill="rgba(45,49,66,0.07)" stroke="rgba(45,49,66,0.40)" stroke-width="1" stroke-linejoin="round" stroke-dasharray="4,3"/>
+        <text x="1112" y="452" fill="#2d3142" font-size="12" font-family="'Geist', sans-serif" text-anchor="middle" font-weight="600">AAM head</text>
+        <text x="1112" y="468" fill="#4f5d75" font-size="9" font-family="'Geist Mono', monospace" text-anchor="middle">7,205 speakers</text>
+        <text x="1172" y="40" fill="#2d3142" font-size="14" font-family="'Instrument Serif', serif" text-anchor="end" font-style="italic">time is averaged away here: a 2 s or a 10 s clip gives the same 6144 numbers</text>
+        <path d="M 936 48 V 112" fill="none" stroke="rgba(45,49,66,0.40)" stroke-width="1" stroke-dasharray="4,3"/>
+        <circle cx="936" cy="114" r="2" fill="#2d3142"/>
+        <text x="40" y="528" fill="#4f5d75" font-size="8" font-family="'Geist Mono', monospace" text-anchor="start" letter-spacing="0.14em">WEIGHTS PER LAYER</text>
+        <text x="40" y="544" fill="#2d3142" font-size="9" font-family="'Geist Mono', monospace" text-anchor="start">20.8M in the encoder</text>
+        <text x="40" y="558" fill="#4f5d75" font-size="9" font-family="'Geist Mono', monospace" text-anchor="start">+1.4M head, training only</text>
+        <line x1="152" y1="616" x2="1180" y2="616" stroke="rgba(45,49,66,0.20)" stroke-width="0.8"/>
+        <text x="210" y="610" fill="#5a6580" font-size="8" font-family="'Geist Mono', monospace" text-anchor="middle">no weights</text>
+        <rect x="318" y="614" width="24" height="2" fill="rgba(45,49,66,0.22)" stroke="#2d3142" stroke-width="0.8"/>
+        <text x="330" y="608" fill="#2d3142" font-size="8" font-family="'Geist Mono', monospace" text-anchor="middle">0.41M</text>
+        <rect x="438" y="600" width="24" height="16" fill="rgba(45,49,66,0.22)" stroke="#2d3142" stroke-width="0.8"/>
+        <text x="450" y="594" fill="#2d3142" font-size="8" font-family="'Geist Mono', monospace" text-anchor="middle">2.71M</text>
+        <rect x="558" y="600" width="24" height="16" fill="rgba(45,49,66,0.22)" stroke="#2d3142" stroke-width="0.8"/>
+        <text x="570" y="594" fill="#2d3142" font-size="8" font-family="'Geist Mono', monospace" text-anchor="middle">2.71M</text>
+        <rect x="678" y="600" width="24" height="16" fill="rgba(45,49,66,0.22)" stroke="#2d3142" stroke-width="0.8"/>
+        <text x="690" y="594" fill="#2d3142" font-size="8" font-family="'Geist Mono', monospace" text-anchor="middle">2.71M</text>
+        <rect x="806" y="560" width="24" height="56" fill="rgba(45,49,66,0.22)" stroke="#2d3142" stroke-width="0.8"/>
+        <text x="818" y="554" fill="#2d3142" font-size="8" font-family="'Geist Mono', monospace" text-anchor="middle">9.45M</text>
+        <rect x="924" y="607" width="24" height="9" fill="rgba(191,69,32,0.30)" stroke="#bf4520" stroke-width="0.8"/>
+        <text x="936" y="601" fill="#2d3142" font-size="8" font-family="'Geist Mono', monospace" text-anchor="middle">1.59M</text>
+        <rect x="1012" y="609" width="24" height="7" fill="rgba(191,69,32,0.30)" stroke="#bf4520" stroke-width="0.8"/>
+        <text x="1024" y="603" fill="#2d3142" font-size="8" font-family="'Geist Mono', monospace" text-anchor="middle">1.18M</text>
+        <rect x="1100" y="608" width="24" height="8" fill="rgba(45,49,66,0.06)" stroke="rgba(45,49,66,0.40)" stroke-width="0.8" stroke-dasharray="3,2"/>
+        <text x="1112" y="602" fill="#5a6580" font-size="8" font-family="'Geist Mono', monospace" text-anchor="middle">1.38M</text>
+        <line x1="30" y1="656" x2="1170" y2="656" stroke="rgba(45,49,66,0.10)" stroke-width="0.8"/>
+        <text x="30" y="680" fill="#4f5d75" font-size="8" font-family="'Geist Mono', monospace" text-anchor="start" letter-spacing="0.14em">LEGEND</text>
+        <rect x="112" y="670" width="20" height="14" rx="2" fill="rgba(79,93,117,0.10)" stroke="#5a6580" stroke-width="1"/>
+        <text x="140" y="680" fill="#4f5d75" font-size="9" font-family="'Geist Mono', monospace" text-anchor="start">features, no weights</text>
+        <rect x="290" y="670" width="20" height="14" rx="2" fill="#ffffff" stroke="#2d3142" stroke-width="1"/>
+        <text x="318" y="680" fill="#4f5d75" font-size="9" font-family="'Geist Mono', monospace" text-anchor="start">frame-level layer</text>
+        <rect x="444" y="670" width="20" height="14" rx="2" fill="rgba(191,69,32,0.08)" stroke="#bf4520" stroke-width="1"/>
+        <text x="472" y="680" fill="#4f5d75" font-size="9" font-family="'Geist Mono', monospace" text-anchor="start">where the voiceprint forms</text>
+        <rect x="640" y="670" width="20" height="14" rx="2" fill="rgba(45,49,66,0.02)" stroke="rgba(45,49,66,0.40)" stroke-width="1" stroke-dasharray="4,3"/>
+        <text x="668" y="680" fill="#4f5d75" font-size="9" font-family="'Geist Mono', monospace" text-anchor="start">training only, discarded</text>
+        <text x="112" y="708" fill="#4f5d75" font-size="9" font-family="'Geist Mono', monospace" text-anchor="start">SCALE  block height ∝ √channels · block width = time frames · bar height ∝ weights</text>
+      </svg>
+    </div>
+  </div>
+</body>
+</html>
