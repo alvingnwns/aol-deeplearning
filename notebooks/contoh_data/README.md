@@ -1,6 +1,6 @@
 # Data contoh VoiceAttend
 
-Folder ini adalah data yang dibaca `notebooks/contoh_absensi_suara.ipynb`. Strukturnya sama dengan yang nanti dipakai backend: rekaman pendaftaran per NIM dan rekaman absensi.
+Folder ini adalah data yang dibaca `notebooks/contoh_absensi_suara.ipynb`. Isinya rekaman pendaftaran per NIM, rekaman absensi, dan CSV yang menghubungkan keduanya.
 
 ```
 contoh_data/
@@ -11,7 +11,7 @@ contoh_data/
 ├── audio/
 │   ├── daftar/<NIM>/K01.wav   minimal 3 klip pendaftaran per mahasiswa
 │   └── uji/<NIM>_1.wav        klip absensi yang akan diuji
-└── hasil/              dibuat notebook: hasil_inferensi.csv, pendaftaran.csv, voiceprints.db
+└── hasil/              dibuat notebook: hasil_inferensi.csv, pendaftaran.csv, voiceprints.pt
 ```
 
 ## Naskah rekaman (`naskah.csv`)

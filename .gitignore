@@ -3,6 +3,7 @@ __pycache__/
 .pytest_cache/
 .env
 data/*
-!data/.gitkeep.cache/
-notebooks/contoh_data/hasil/voiceprints.db
+!data/.gitkeep
 .ipynb_checkpoints/
+notebooks/model_ecapa/
+notebooks/contoh_data/hasil/voiceprints.pt

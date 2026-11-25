@@ -1,19 +1,19 @@
-file,pemilik_suara,klaim_nim,harapan,id_kalimat,keputusan,alasan,pesan,skor,pesaing_terdekat,skor_pesaing,selisih,prediksi,benar
-audio/uji/2702000001_1.wav,2702000001,2702000001,hadir,U01,present,match,Kamu tercatat hadir.,0.8062,2702000002,0.2884,0.5178,hadir,True
-audio/uji/2702000001_2.webm,2702000001,2702000001,hadir,U01,present,match,Kamu tercatat hadir.,0.802,2702000002,0.2446,0.5574,hadir,True
-audio/uji/2702000002_1.wav,2702000002,2702000002,hadir,U01,present,match,Kamu tercatat hadir.,0.8301,2702000003,0.2274,0.6027,hadir,True
-audio/uji/2702000002_2.wav,2702000002,2702000002,hadir,U01,present,match,Kamu tercatat hadir.,0.823,2702000005,0.2141,0.6089,hadir,True
-audio/uji/2702000003_1.wav,2702000003,2702000003,hadir,U01,present,match,Kamu tercatat hadir.,0.8383,2702000005,0.3222,0.5162,hadir,True
-audio/uji/2702000003_2.wav,2702000003,2702000003,hadir,U01,present,match,Kamu tercatat hadir.,0.8326,2702000005,0.3165,0.5161,hadir,True
-audio/uji/2702000004_1.wav,2702000004,2702000004,hadir,U01,present,match,Kamu tercatat hadir.,0.8108,2702000003,0.098,0.7128,hadir,True
-audio/uji/2702000004_2.wav,2702000004,2702000004,hadir,U01,present,match,Kamu tercatat hadir.,0.8209,2702000003,0.1147,0.7061,hadir,True
-audio/uji/2702000005_1.wav,2702000005,2702000005,hadir,U01,present,match,Kamu tercatat hadir.,0.7939,2702000003,0.2442,0.5497,hadir,True
-audio/uji/2702000005_2.wav,2702000005,2702000005,hadir,U01,present,match,Kamu tercatat hadir.,0.8435,2702000002,0.2365,0.607,hadir,True
-audio/uji/2702000001_1.wav,2702000001,2702000002,tidak_hadir,U01,retry,low_confidence,"Suara belum bisa dipastikan, silakan coba lagi.",0.2884,2702000001,0.8062,-0.5178,tidak_hadir,True
-audio/uji/2702000002_1.wav,2702000002,2702000003,tidak_hadir,U01,retry,low_confidence,"Suara belum bisa dipastikan, silakan coba lagi.",0.2274,2702000002,0.8301,-0.6027,tidak_hadir,True
-audio/uji/2702000003_1.wav,2702000003,2702000004,tidak_hadir,U01,rejected,voice_mismatch,Suara ini tidak cocok dengan mahasiswa yang terdaftar.,0.0086,2702000003,0.8383,-0.8298,tidak_hadir,True
-audio/uji/2702000004_1.wav,2702000004,2702000005,tidak_hadir,U01,rejected,voice_mismatch,Suara ini tidak cocok dengan mahasiswa yang terdaftar.,0.0257,2702000004,0.8108,-0.7851,tidak_hadir,True
-audio/uji/2702000005_1.wav,2702000005,2702000001,tidak_hadir,U01,rejected,voice_mismatch,Suara ini tidak cocok dengan mahasiswa yang terdaftar.,0.1947,2702000005,0.7939,-0.5992,tidak_hadir,True
-audio/uji/tamu_1.wav,tamu,2702000001,tidak_hadir,U01,rejected,voice_mismatch,Suara ini tidak cocok dengan mahasiswa yang terdaftar.,-0.0241,2702000004,0.1859,-0.21,tidak_hadir,True
-audio/uji/tamu_2.wav,tamu,2702000002,tidak_hadir,U01,rejected,voice_mismatch,Suara ini tidak cocok dengan mahasiswa yang terdaftar.,0.03,2702000004,0.1479,-0.1179,tidak_hadir,True
-audio/uji/2702000003_pendek.wav,2702000003,2702000003,tidak_hadir,U01,tidak_diproses,too_short,"Rekaman terlalu pendek, bicaralah minimal 2 detik.",,,,,tidak_hadir,True
+file,pemilik_suara,klaim_nim,harapan,keputusan,alasan,skor,pesaing_terdekat,skor_pesaing,selisih,prediksi,benar
+audio/uji/2702000001_1.wav,2702000001,2702000001,hadir,HADIR,suara cocok,0.806,2702000002,0.288,0.518,hadir,True
+audio/uji/2702000001_2.webm,2702000001,2702000001,hadir,HADIR,suara cocok,0.802,2702000002,0.245,0.557,hadir,True
+audio/uji/2702000002_1.wav,2702000002,2702000002,hadir,HADIR,suara cocok,0.83,2702000003,0.227,0.603,hadir,True
+audio/uji/2702000002_2.wav,2702000002,2702000002,hadir,HADIR,suara cocok,0.823,2702000005,0.214,0.609,hadir,True
+audio/uji/2702000003_1.wav,2702000003,2702000003,hadir,HADIR,suara cocok,0.838,2702000005,0.322,0.516,hadir,True
+audio/uji/2702000003_2.wav,2702000003,2702000003,hadir,HADIR,suara cocok,0.833,2702000005,0.316,0.516,hadir,True
+audio/uji/2702000004_1.wav,2702000004,2702000004,hadir,HADIR,suara cocok,0.811,2702000003,0.098,0.713,hadir,True
+audio/uji/2702000004_2.wav,2702000004,2702000004,hadir,HADIR,suara cocok,0.821,2702000003,0.115,0.706,hadir,True
+audio/uji/2702000005_1.wav,2702000005,2702000005,hadir,HADIR,suara cocok,0.794,2702000003,0.244,0.55,hadir,True
+audio/uji/2702000005_2.wav,2702000005,2702000005,hadir,HADIR,suara cocok,0.844,2702000002,0.237,0.607,hadir,True
+audio/uji/2702000001_1.wav,2702000001,2702000002,tidak_hadir,ULANGI,skor di zona ragu,0.288,2702000001,0.806,-0.518,tidak_hadir,True
+audio/uji/2702000002_1.wav,2702000002,2702000003,tidak_hadir,ULANGI,skor di zona ragu,0.227,2702000002,0.83,-0.603,tidak_hadir,True
+audio/uji/2702000003_1.wav,2702000003,2702000004,tidak_hadir,TOLAK,suara tidak cocok dengan NIM,0.009,2702000003,0.838,-0.83,tidak_hadir,True
+audio/uji/2702000004_1.wav,2702000004,2702000005,tidak_hadir,TOLAK,suara tidak cocok dengan NIM,0.026,2702000004,0.811,-0.785,tidak_hadir,True
+audio/uji/2702000005_1.wav,2702000005,2702000001,tidak_hadir,TOLAK,suara tidak cocok dengan NIM,0.195,2702000005,0.794,-0.599,tidak_hadir,True
+audio/uji/tamu_1.wav,tamu,2702000001,tidak_hadir,TOLAK,suara tidak cocok dengan NIM,-0.024,2702000004,0.186,-0.21,tidak_hadir,True
+audio/uji/tamu_2.wav,tamu,2702000002,tidak_hadir,TOLAK,suara tidak cocok dengan NIM,0.03,2702000004,0.148,-0.118,tidak_hadir,True
+audio/uji/2702000003_pendek.wav,2702000003,2702000003,tidak_hadir,ULANGI,rekaman terlalu pendek (1.2 detik),,,,,tidak_hadir,True
