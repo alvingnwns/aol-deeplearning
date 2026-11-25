@@ -1,0 +1,19 @@
+file,pemilik_suara,klaim_nim,harapan,keputusan,alasan,skor,pesaing_terdekat,skor_pesaing,selisih,prediksi,benar
+audio/uji/2702000001_1.wav,2702000001,2702000001,hadir,HADIR,suara cocok,0.806,2702000002,0.288,0.518,hadir,True
+audio/uji/2702000001_2.webm,2702000001,2702000001,hadir,HADIR,suara cocok,0.802,2702000002,0.245,0.557,hadir,True
+audio/uji/2702000002_1.wav,2702000002,2702000002,hadir,HADIR,suara cocok,0.83,2702000003,0.227,0.603,hadir,True
+audio/uji/2702000002_2.wav,2702000002,2702000002,hadir,HADIR,suara cocok,0.823,2702000005,0.214,0.609,hadir,True
+audio/uji/2702000003_1.wav,2702000003,2702000003,hadir,HADIR,suara cocok,0.838,2702000005,0.322,0.516,hadir,True
+audio/uji/2702000003_2.wav,2702000003,2702000003,hadir,HADIR,suara cocok,0.833,2702000005,0.316,0.516,hadir,True
+audio/uji/2702000004_1.wav,2702000004,2702000004,hadir,HADIR,suara cocok,0.811,2702000003,0.098,0.713,hadir,True
+audio/uji/2702000004_2.wav,2702000004,2702000004,hadir,HADIR,suara cocok,0.821,2702000003,0.115,0.706,hadir,True
+audio/uji/2702000005_1.wav,2702000005,2702000005,hadir,HADIR,suara cocok,0.794,2702000003,0.244,0.55,hadir,True
+audio/uji/2702000005_2.wav,2702000005,2702000005,hadir,HADIR,suara cocok,0.844,2702000002,0.237,0.607,hadir,True
+audio/uji/2702000001_1.wav,2702000001,2702000002,tidak_hadir,ULANGI,skor di zona ragu,0.288,2702000001,0.806,-0.518,tidak_hadir,True
+audio/uji/2702000002_1.wav,2702000002,2702000003,tidak_hadir,ULANGI,skor di zona ragu,0.227,2702000002,0.83,-0.603,tidak_hadir,True
+audio/uji/2702000003_1.wav,2702000003,2702000004,tidak_hadir,TOLAK,suara tidak cocok dengan NIM,0.009,2702000003,0.838,-0.83,tidak_hadir,True
+audio/uji/2702000004_1.wav,2702000004,2702000005,tidak_hadir,TOLAK,suara tidak cocok dengan NIM,0.026,2702000004,0.811,-0.785,tidak_hadir,True
+audio/uji/2702000005_1.wav,2702000005,2702000001,tidak_hadir,TOLAK,suara tidak cocok dengan NIM,0.195,2702000005,0.794,-0.599,tidak_hadir,True
+audio/uji/tamu_1.wav,tamu,2702000001,tidak_hadir,TOLAK,suara tidak cocok dengan NIM,-0.024,2702000004,0.186,-0.21,tidak_hadir,True
+audio/uji/tamu_2.wav,tamu,2702000002,tidak_hadir,TOLAK,suara tidak cocok dengan NIM,0.03,2702000004,0.148,-0.118,tidak_hadir,True
+audio/uji/2702000003_pendek.wav,2702000003,2702000003,tidak_hadir,ULANGI,rekaman terlalu pendek (1.2 detik),,,,,tidak_hadir,True

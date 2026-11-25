@@ -1,0 +1,29 @@
+file,sumber
+audio/daftar/2702000001/K01.wav,LibriSpeech dev-clean 2277-149896-0000
+audio/daftar/2702000001/K02.wav,LibriSpeech dev-clean 2277-149896-0001
+audio/daftar/2702000001/K03.wav,LibriSpeech dev-clean 2277-149896-0002
+audio/uji/2702000001_1.wav,LibriSpeech dev-clean 2277-149896-0005
+audio/uji/2702000001_2.webm,LibriSpeech dev-clean 2277-149896-0006
+audio/daftar/2702000002/K01.wav,LibriSpeech dev-clean 2035-147960-0003
+audio/daftar/2702000002/K02.wav,LibriSpeech dev-clean 2035-147960-0005
+audio/daftar/2702000002/K03.wav,LibriSpeech dev-clean 2035-147960-0008
+audio/uji/2702000002_1.wav,LibriSpeech dev-clean 2035-147960-0011
+audio/uji/2702000002_2.wav,LibriSpeech dev-clean 2035-147960-0012
+audio/daftar/2702000003/K01.wav,LibriSpeech dev-clean 7976-110124-0001
+audio/daftar/2702000003/K02.wav,LibriSpeech dev-clean 7976-110124-0008
+audio/daftar/2702000003/K03.wav,LibriSpeech dev-clean 7976-110124-0009
+audio/uji/2702000003_1.wav,LibriSpeech dev-clean 7976-110124-0010
+audio/uji/2702000003_2.wav,LibriSpeech dev-clean 7976-110124-0011
+audio/daftar/2702000004/K01.wav,LibriSpeech dev-clean 8297-275156-0001
+audio/daftar/2702000004/K02.wav,LibriSpeech dev-clean 8297-275156-0002
+audio/daftar/2702000004/K03.wav,LibriSpeech dev-clean 8297-275156-0006
+audio/uji/2702000004_1.wav,LibriSpeech dev-clean 8297-275156-0008
+audio/uji/2702000004_2.wav,LibriSpeech dev-clean 8297-275156-0009
+audio/daftar/2702000005/K01.wav,LibriSpeech dev-clean 6345-93302-0002
+audio/daftar/2702000005/K02.wav,LibriSpeech dev-clean 6345-93302-0003
+audio/daftar/2702000005/K03.wav,LibriSpeech dev-clean 6345-93302-0004
+audio/uji/2702000005_1.wav,LibriSpeech dev-clean 6345-93302-0007
+audio/uji/2702000005_2.wav,LibriSpeech dev-clean 6345-93302-0010
+audio/uji/tamu_1.wav,LibriSpeech dev-clean 6295-244435-0001
+audio/uji/tamu_2.wav,LibriSpeech dev-clean 6295-244435-0002
+audio/uji/2702000003_pendek.wav,"LibriSpeech dev-clean 7976-110124-0010 (1,2 detik pertama)"

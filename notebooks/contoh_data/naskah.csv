@@ -1,0 +1,7 @@
+id_kalimat,jenis,kalimat,durasi_detik,catatan
+K01,daftar,"Nama saya {nama}, nomor induk mahasiswa saya {nim}.",4-6,Ganti {nama} dan {nim} dengan data sendiri
+K02,daftar,Saya mengikuti mata kuliah Deep Learning dan hadir di kelas hari ini.,4-6,
+K03,daftar,"Satu, dua, tiga, empat, lima, enam, tujuh, delapan, sembilan, sepuluh.",4-6,Ucapkan dengan tempo biasa
+K04,daftar,Pagi ini saya berangkat ke kampus dengan semangat untuk belajar.,4-6,Opsional: klip ke-4 membuat voiceprint lebih stabil
+K05,daftar,Kecerdasan buatan dapat mengenali suara setiap orang secara unik.,4-6,Opsional: klip ke-5
+U01,uji,"Saya hadir. Kode saya {kode}.",3-5,{kode} = 6 angka acak yang tampil di layar saat absen
